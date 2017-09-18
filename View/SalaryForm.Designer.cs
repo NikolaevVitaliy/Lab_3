@@ -46,6 +46,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxInformationperson = new System.Windows.Forms.GroupBox();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPerson)).BeginInit();
             this.toolStrip.SuspendLayout();
@@ -54,9 +55,9 @@
             // groupBox
             // 
             this.groupBox.Controls.Add(this.dataGridViewPerson);
-            this.groupBox.Location = new System.Drawing.Point(1, 1);
+            this.groupBox.Location = new System.Drawing.Point(12, 12);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(546, 267);
+            this.groupBox.Size = new System.Drawing.Size(535, 256);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "SalaryForm";
@@ -76,8 +77,9 @@
             this.dataGridViewPerson.Name = "dataGridViewPerson";
             this.dataGridViewPerson.ReadOnly = true;
             this.dataGridViewPerson.RowHeadersVisible = false;
-            this.dataGridViewPerson.Size = new System.Drawing.Size(433, 246);
+            this.dataGridViewPerson.Size = new System.Drawing.Size(433, 235);
             this.dataGridViewPerson.TabIndex = 0;
+            this.dataGridViewPerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPerson_CellClick);
             // 
             // Column1
             // 
@@ -160,7 +162,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(572, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1274, 25);
             this.toolStrip.TabIndex = 7;
             this.toolStrip.Text = "toolStrip1";
             // 
@@ -179,22 +181,32 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
+            // 
+            // groupBoxInformationperson
+            // 
+            this.groupBoxInformationperson.Location = new System.Drawing.Point(564, 28);
+            this.groupBoxInformationperson.Name = "groupBoxInformationperson";
+            this.groupBoxInformationperson.Size = new System.Drawing.Size(738, 417);
+            this.groupBoxInformationperson.TabIndex = 8;
+            this.groupBoxInformationperson.TabStop = false;
+            this.groupBoxInformationperson.Text = "Information person";
             // 
             // SalaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 369);
+            this.ClientSize = new System.Drawing.Size(1274, 457);
+            this.Controls.Add(this.groupBoxInformationperson);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.label1);
@@ -219,7 +231,6 @@
         private System.Windows.Forms.Button buttonRemovePerson;
         private System.Windows.Forms.Button buttonAddPerson;
         private System.Windows.Forms.Button buttonModify;
-        private System.Windows.Forms.DataGridView dataGridViewPerson;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -232,6 +243,8 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridViewPerson;
+        private System.Windows.Forms.GroupBox groupBoxInformationperson;
     }
 }
 

@@ -471,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 403);
+            this.ClientSize = new System.Drawing.Size(1259, 403);
             this.Controls.Add(this.buttonCreateRandomData);
             this.Controls.Add(this.buttonCalculateSalary);
             this.Controls.Add(this.buttonCancel);

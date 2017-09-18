@@ -78,10 +78,11 @@ namespace Model
             set
             {
                 if (value <= 0 || value>220) 
-                    throw new ArgumentException("Значение меньше  или равно 0 или больше 24. Введите число от 0 до 24");
+                    throw new ArgumentException("Значение меньше  или равно 0 или больше 220. Введите число от 0 до 220");
                 _hour = value;
             }
         }
+
         /// <summary>
         /// Свойство деньги
         /// </summary>
@@ -99,7 +100,7 @@ namespace Model
         /// </summary>
         public double GetSalary()
         {
-            return ((_hour * _moneyhour) - ((_hour * _moneyhour)*(13/100)));
+            return ((_hour * _moneyhour) - ((_hour * _moneyhour)*(0.13)));
         }
 
     }

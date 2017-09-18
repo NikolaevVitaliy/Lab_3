@@ -1,0 +1,9 @@
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\Model.dll
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\Model.pdb
+C:\Users\krat5\Desktop\5__\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\krat5\Desktop\5__\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\krat5\Desktop\5__\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\krat5\Desktop\5__\UnitTests\obj\Debug\UnitTests.pdb

@@ -1,0 +1,9 @@
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\UnitTests.dll
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\UnitTests.pdb
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\Model.dll
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\nunit.framework.dll
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\Model.pdb
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\bin\Release\nunit.framework.xml
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\obj\Release\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\obj\Release\UnitTests.dll
+C:\Users\krat5\Desktop\Учеба\СПО\Lab 5\UnitTests\obj\Release\UnitTests.pdb

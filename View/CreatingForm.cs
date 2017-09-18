@@ -234,7 +234,7 @@ namespace View
         }
         private void textBoxFirstName_Leave(object sender, EventArgs e)
         {
-            if (textBoxFirstName.Text == "     ,")
+            if (textBoxFirstName.Text == "")
             {
                 errorProviderFirstname.SetError(textBoxFirstName, "Данное поле должно быть заполненным");
             }
@@ -261,7 +261,7 @@ namespace View
 
         private void dateTimePickerDateOfReceipt_Leave(object sender, EventArgs e)
         {
-            if (dateTimePickerDateOfReceipt.Text == "     ,")
+            if (dateTimePickerDateOfReceipt.Text == "")
             {
                 errorProviderDateOfReceipt.SetError(dateTimePickerDateOfReceipt, "Данное поле должно быть заполненным");
             }
@@ -277,7 +277,7 @@ namespace View
 
         private void maskedTextBoxWorkingDays_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxWorkingDays.Text == "     ,")
+            if (maskedTextBoxWorkingDays.Text == "")
             {
                 errorProviderWorkingDays.SetError(maskedTextBoxWorkingDays, "Данное поле должно быть заполненным");
             }
@@ -290,7 +290,7 @@ namespace View
 
         private void maskedTextBoxWeekend_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxWeekend.Text == "     ,")
+            if (maskedTextBoxWeekend.Text == "")
             {
                 errorProviderWeekend.SetError(maskedTextBoxWeekend, "Данное поле должно быть заполненным");
             }
@@ -303,7 +303,7 @@ namespace View
 
         private void maskedTextBoxTimeOff_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxTimeOff.Text == "     ,")
+            if (maskedTextBoxTimeOff.Text == "")
             {
                 errorProviderTimeOff.SetError(maskedTextBoxTimeOff, "Данное поле должно быть заполненным");
             }
@@ -316,7 +316,7 @@ namespace View
 
         private void maskedTextBoxBaseSalary_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxBaseSalary.Text == "     ,")
+            if (maskedTextBoxBaseSalary.Text == "")
             {
                 errorProviderBaseSalary.SetError(maskedTextBoxBaseSalary, "Данное поле должно быть заполненным");
             }
@@ -329,7 +329,7 @@ namespace View
 
         private void maskedTextBoxHour_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxHour.Text == "     ,")
+            if (maskedTextBoxHour.Text == "")
             {
                 errorProviderHour.SetError(maskedTextBoxHour, "Данное поле должно быть заполненным");
             }
@@ -342,7 +342,7 @@ namespace View
 
         private void maskedTextBoxNumberChange_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxNumberChange.Text == "     ,")
+            if (maskedTextBoxNumberChange.Text == " ")
             {
                 errorProviderNumberChange.SetError(maskedTextBoxNumberChange, "Данное поле должно быть заполненным");
             }
@@ -355,7 +355,7 @@ namespace View
 
         private void maskedTextBoxMoneyHour_Leave(object sender, EventArgs e)
         {
-            if (maskedTextBoxMoneyHour.Text == "     ,")
+            if (maskedTextBoxMoneyHour.Text == "")
             {
                 errorProviderMoneyHour.SetError(maskedTextBoxMoneyHour, "Данное поле должно быть заполненным");
             }
@@ -460,6 +460,7 @@ namespace View
                 _maskedMoneyHour = true;
             }
         }
+
 
       
     }

@@ -16,9 +16,24 @@ namespace View
 {
     public partial class SalaryForm : Form
     {
+
+        private ObjectControl mainPersonControl = new ObjectControl();
+        public PersonList list = new PersonList();
+
+
         public SalaryForm()
         {
             InitializeComponent();
+            mainPersonControl.Parent = groupBoxInformationperson;
+            mainPersonControl.Location = new System.Drawing.Point(7, 15);
+            mainPersonControl.ReadOnly = true;
+            mainPersonControl.Size = new System.Drawing.Size(738, 341);
+
+            if (list.listPerson.Count != 0)
+            {
+                mainPersonControl.Person = list.listPerson[dataGridViewPerson.SelectedCells[0].RowIndex];
+            }
+
         }
 
         JsonSerializer serializer = new JsonSerializer()
@@ -28,29 +43,45 @@ namespace View
             NullValueHandling = NullValueHandling.Include
         };
 
+
+
+
         //Кнопка добавления строки с данными о человеке в список через форму создания
         private void buttonAddPerson_Click(object sender, EventArgs e)
         {
-            CreatingForm AddForma1 = new CreatingForm();
-            if (AddForma1.ShowDialog() == DialogResult.OK)
+            ModifyForm AddForma1 = new ModifyForm();
+            AddForma1.ShowDialog();
+
+
+            var person = AddForma1.modifyPerson;
+            if (person == null)
             {
-                var person = AddForma1.Person;
-                this.dataGridViewPerson.Rows.Add(person.FirstName, person.LastName, person.DateOfReceipt, person.GetSalary());
-                PersonList.listPerson.Add(person);
+                return;
             }
+            dataGridViewPerson.Rows.Add(person.FirstName, person.LastName, person.DateOfReceipt, person.GetSalary());
+            list.listPerson.Add(person);
+            mainPersonControl.Person = list.listPerson[dataGridViewPerson.SelectedCells[0].RowIndex];
+
+
         }
 
         //Кнопка удаления строки с данными о человеке из списка 
         private void buttonRemovePerson_Click(object sender, EventArgs e)
         {
-            int removeIndex = dataGridViewPerson.CurrentCell.RowIndex;
+
             if (dataGridViewPerson.Rows.Count == 0)
             {
                 MessageBox.Show("Список пуст!");
             }
+
+            int removeIndex = dataGridViewPerson.CurrentCell.RowIndex;
             dataGridViewPerson.Rows.RemoveAt(removeIndex);
-            PersonList.listPerson.RemoveAt(removeIndex);
+            list.listPerson.RemoveAt(removeIndex);
+
+
         }
+
+
         //Кнопка изменения данных в строке списка через форму создания фигуры
         private void buttonModify_Click(object sender, EventArgs e)
         {
@@ -60,29 +91,29 @@ namespace View
             }
             else
             {
-                CreatingForm AddModify = new CreatingForm();
-                int modIndex = dataGridViewPerson.CurrentCell.RowIndex;
-                AddModify.Person = PersonList.listPerson[modIndex];
-                if (AddModify.ShowDialog() == DialogResult.OK)
-                {
-                    var newPerson = AddModify.Person;
-                    PersonList.listPerson.Insert(dataGridViewPerson.SelectedCells[0].RowIndex, newPerson);
-                    PersonList.listPerson.RemoveAt(dataGridViewPerson.SelectedCells[0].RowIndex + 1);
-                    dataGridViewPerson.Rows.Clear();
-                    foreach (var data in PersonList.listPerson)
-                    {
-                        dataGridViewPerson.Rows.Add(data.FirstName, data.LastName, data.DateOfReceipt, data.GetSalary());
-                    }
 
+                int modIndex = dataGridViewPerson.CurrentCell.RowIndex;
+                ModifyForm AddModify = new ModifyForm();
+                AddModify.modifyPerson = list.listPerson[modIndex];
+                AddModify.ShowDialog();
+                var newPerson = AddModify.modifyPerson;
+                list.listPerson.Insert(dataGridViewPerson.SelectedCells[0].RowIndex, newPerson);
+                list.listPerson.RemoveAt(dataGridViewPerson.SelectedCells[0].RowIndex + 1);
+                dataGridViewPerson.Rows.Clear();
+                foreach (var data in list.listPerson)
+                {
+                    dataGridViewPerson.Rows.Add(data.FirstName, data.LastName, data.DateOfReceipt, data.GetSalary());
                 }
 
             }
 
         }
+
+
         //Поиск данных по фамилия человека
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-           
+
             for (int i = 0; i < dataGridViewPerson.Rows.Count; i++)
             {
                 dataGridViewPerson.ClearSelection();
@@ -93,11 +124,14 @@ namespace View
                 }
             }
         }
-        
+
         //Сериализация списка
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PersonList.listPerson.Count == 0)
+
+
+
+            if (list.listPerson.Count == 0)
             {
                 MessageBox.Show("Список фигур пуст.");
             }
@@ -109,11 +143,12 @@ namespace View
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    serializer.Serialize(writer, PersonList.listPerson);
+                    serializer.Serialize(writer, list.listPerson);
                 }
                 MessageBox.Show("Список сохранен.");
             }
         }
+
         //Десериализация списка
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -123,15 +158,32 @@ namespace View
                 using (StreamReader sr = new StreamReader(openFile.FileName))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    PersonList.listPerson = (List<ISalary>)serializer.Deserialize(reader, typeof(List<ISalary>));
+                    list.listPerson = (List<ISalary>) serializer.Deserialize(reader, typeof(List<ISalary>));
                     dataGridViewPerson.Rows.Clear();
-                    foreach (var data in PersonList.listPerson)
+                    foreach (var data in list.listPerson)
                     {
-                        dataGridViewPerson.Rows.Add(data.FirstName, data.LastName, data.DateOfReceipt, data.GetSalary());
+                        dataGridViewPerson.Rows.Add(data.FirstName, data.LastName, data.DateOfReceipt,
+                            data.GetSalary());
                     }
                 }
             }
         }
+
+        private void dataGridViewPerson_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = dataGridViewPerson.CurrentCell;
+            int index = cell.RowIndex;
+            mainPersonControl.Person = list.listPerson[index];
+
+        }
+
+       
+
+       
+
+      
+
+
     }
 
 }

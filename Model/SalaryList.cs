@@ -10,6 +10,6 @@ namespace Model
     public class PersonList
     {
 
-        public static List<ISalary> listPerson = new List<ISalary>();
+        public List<ISalary> listPerson = new List<ISalary>();
     }
 }

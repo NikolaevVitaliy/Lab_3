@@ -98,10 +98,10 @@ namespace Model
       
         /// <summary>
         /// Метод расчета зарплаты
-        /// </summary
+        /// </summary>
         public double GetSalary()
         {
-            return (_numberchange * _moneyonechange) - ((_numberchange * _moneyonechange)*(13/100));
+            return (_numberchange * _moneyonechange) - ((_numberchange * _moneyonechange)*(0.13));
         }
 
     }

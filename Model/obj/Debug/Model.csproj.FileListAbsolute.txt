@@ -33,3 +33,13 @@ C:\Users\krat5\Desktop\5\Model\obj\Debug\Model.dll
 C:\Users\krat5\Desktop\5\Model\obj\Debug\Model.pdb
 C:\Users\krat5\Desktop\5\Model\bin\Debug\Model.dll
 C:\Users\krat5\Desktop\5\Model\bin\Debug\Model.pdb
+C:\Users\krat5\Desktop\5__\Model\bin\Debug\Model.dll
+C:\Users\krat5\Desktop\5__\Model\bin\Debug\Model.pdb
+C:\Users\krat5\Desktop\5__\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\krat5\Desktop\5__\Model\obj\Debug\Model.dll
+C:\Users\krat5\Desktop\5__\Model\obj\Debug\Model.pdb
+C:\Users\krat5\Desktop\Lab 5\Model\bin\Debug\Model.dll
+C:\Users\krat5\Desktop\Lab 5\Model\bin\Debug\Model.pdb
+C:\Users\krat5\Desktop\Lab 5\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\krat5\Desktop\Lab 5\Model\obj\Debug\Model.dll
+C:\Users\krat5\Desktop\Lab 5\Model\obj\Debug\Model.pdb

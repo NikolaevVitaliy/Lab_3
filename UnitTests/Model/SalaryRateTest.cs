@@ -10,9 +10,8 @@ using NUnit.Framework;
 namespace UnitTests.Model
 {
     [TestFixture]
-    class SalaryRateTest
+    public class SalaryRateTest
     {
-        /// <summary>
         /// Тестирование ввода кол-во смен (не должна быть меньше 0 или более 31)
         /// </summary>
         /// /// <param name="NumberChange">Кол-во смен</param>
@@ -58,7 +57,7 @@ namespace UnitTests.Model
          /// </summary>
         /// <returns>Зарплата работника</returns>
         [Test]
-        [TestCase(15, 2000, 26100, TestName = "Тестирование зарплаты работника")]
+        [TestCase(15, 2000, ExpectedResult=26100, TestName = "Тестирование зарплаты работника")]
         public double volumeTest_Positive(int _numberchange, double _moneyonechange)
         {
             var volumePSalary = new SalaryRate();

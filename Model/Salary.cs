@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    ///<summary>
+    ///<summary/>
     ///Рассчет зарплаты по ставке
-    ///<summary>
+    ///<summary/>
     public class Salary : ISalary
     {
         
@@ -135,7 +135,7 @@ namespace Model
         /// </summary>
         public double GetSalary()
         {
-            return (((_basesalary/_workingdays)*(_workingdays-_timeoff))-(((_basesalary/_workingdays)*(_workingdays-_timeoff))*(13)/100)) ;
+            return (((_basesalary/_workingdays)*(_workingdays-_timeoff))-(((_basesalary/_workingdays)*(_workingdays-_timeoff))*0.13)) ;
         }
 
     }
