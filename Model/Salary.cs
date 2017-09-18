@@ -68,7 +68,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Свойство дата приема
+        /// Свойство дата приема!
         /// </summary
         public string DateOfReceipt
         {
